@@ -1,0 +1,33 @@
+import turtle
+import random
+import math
+
+# Setup the screen
+screen = turtle.Screen()
+screen.bgcolor("black")
+
+# Create the turtle
+pen = turtle.Turtle()
+pen.shape("turtle")
+pen.speed(0)
+pen.width(2)
+
+# Function to generate random colors
+def random_color():
+    return (random.random(), random.random(), random.random())
+
+# Function to draw the spiral
+def draw_spiral():
+    angle = 45  # Initial angle of the spiral
+    size = 1  # Initial line size
+    for i in range(200):  # Loop for 200 steps
+        pen.color(random_color())  # Pick a random color
+        pen.forward(size)  # Move the turtle forward
+        pen.left(angle)  # Turn the turtle left
+        size += 1  # Increase the line size
+
+# Draw the spiral
+draw_spiral()
+
+# End the program when the window is clicked
+screen.exitonclick()
